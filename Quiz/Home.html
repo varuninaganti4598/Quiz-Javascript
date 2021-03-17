@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        .jumbotron{
+            background-color: rgb(97, 226, 71);
+            color: rgb(65, 51, 51);
+            text-decoration:underline;
+        }
+        h1{
+            font-family: fantasy;
+        }
+        #submit:hover{
+            background-color: skyblue;
+            
+        }
+
+    </style>
+    <script>
+        const n=document.getElementById("name");
+        function validateForm() {
+  var x= document.forms["myForm"]["user"].value;
+  var y= document.forms["myForm"]["roll"].value;
+  var z= document.forms["myForm"]["course"].value;
+  if (x=="") {
+    alert("Please enter your name");
+    return false;
+  }
+  else if (y == "") {
+    alert("Please enter your roll number");
+    return false;
+  }
+  else if (z == "") {
+    alert("Please enter course details");
+    return false;
+  }
+  
+}
+    </script>
+</head>
+
+<body>
+<div class="jumbotron text-center">
+    <div class="container">
+        <h1>WELCOME TO LMS QUIZ</h1>
+    </div>
+
+</div>
+<div class="container text-center">
+    <form name="myForm" action="q1.html" onsubmit="return validateForm()">
+    <fieldset>
+        <legend>STUDENT LOG IN</legend>
+    <label for="user">Username:</label>
+    <br>
+    <input type="text" id="user">
+    <br>
+    <label for="roll">Roll Number:</label>
+    <br>
+    <input type="text" id="roll">
+    <br>
+    <label for="course">Course Details:</label>
+    <br>
+    <input type="text" id="course">
+    <br>
+    <br>
+    <input id="submit" type="submit" value="submit" style="color: rgb(255, 0, 0);" >
+
+</fieldset></form>
+</div>
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+</html>
