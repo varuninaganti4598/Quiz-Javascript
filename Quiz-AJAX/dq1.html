@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    
+    
+    <script src="a.js">
+  
+    </script>
+     <script>
+          var count=60;
+    var interval=setInterval(function(){
+        document.getElementById('count').innerHTML=`Time remaining: ${count}`;
+        count--;
+        if(count==-1 ){
+            clearInterval(interval);
+            alert("out of time")
+
+        }
+        
+    },1000);
+        </script>
+<style>
+    P{
+        font-size: large;
+    }
+    .jumbotron{
+            background-color: rgb(97, 226, 71);
+            color: rgb(65, 51, 51);
+            text-decoration:underline;
+        }
+        h1{
+            font-family: fantasy;
+        }
+        #count{
+            
+            font-family: fantasy;
+            font-size: 20px;
+        }
+        
+</style>
+</head>
+
+
+
+
+<body >
+
+    <div class="jumbotron text-center">
+        <h1 id="un">BASIC HTML QUIZ</h1>
+        <div id="count">TIMER:</div>
+    </div>
+    
+    <div class="qp">
+        <div class="container">
+        <div style="font-size:20pt;">Quiz</div>
+         <div class="ques" id="question"> 
+         </div>
+         <div><input type="checkbox" id="a" name="options">
+            <span id="optt1"></span>
+        </div>
+        <div><input type="checkbox" id="b" name="options">
+            <span id="optt2"></span>
+        </div>
+        <div><input type="checkbox" id="c" name="options">
+            <span id="optt3"></span>
+        </div>
+        <div><input type="checkbox" id="d" name="options">
+            <span id="optt4"></span>
+        </div>
+        <div class="lftCss">
+        <button class="nxtBtn" onclick="checkAnswer()">next</button>
+        </div>
+    </div>
+
+</div>
+    
+</body>
+
+</html>
