@@ -8,7 +8,11 @@
   
     </script>
      <script>
-          var count=60;
+         function dis(){
+              document.getElementById("qp1").style.display="block"
+              document.getElementById("log").style.display="none"
+              if(document.getElementById("qp1").style.display="block"){
+                var count=60;
     var interval=setInterval(function(){
         document.getElementById('count').innerHTML=`Time remaining: ${count}`;
         count--;
@@ -19,6 +23,27 @@
         }
         
     },1000);
+              }
+         }
+          function validateForm() {
+  var x= document.forms["myForm"]["user"].value;
+  var y= document.forms["myForm"]["roll"].value;
+  var z= document.forms["myForm"]["course"].value;
+  if (x=="") {
+    alert("Please enter your name");
+   
+  }
+  else if (y == "") {
+    alert("Please enter your roll number");
+    
+  }
+  else if (z == "") {
+    alert("Please enter course details");
+    
+  }
+  
+}
+       
         </script>
 <style>
     P{
@@ -37,7 +62,18 @@
             font-family: fantasy;
             font-size: 20px;
         }
-        
+
+        .bt2:hover{
+            background-color: skyblue;
+            
+        }
+        #submit:hover{
+            background-color: skyblue;
+            
+        }
+        #question{
+            font-size: 30px;
+        }
 </style>
 </head>
 
@@ -50,10 +86,32 @@
         <h1 id="un">BASIC HTML QUIZ</h1>
         <div id="count">TIMER:</div>
     </div>
+    <div class="container text-center" id="log">
+        <form name="myForm" onsubmit="validateForm()">
+        <fieldset>
+            <legend>STUDENT LOG IN</legend>
+        <label for="user">Username:</label>
+        <br>
+        <input type="text" id="user">
+        <br>
+        <label for="roll">Roll Number:</label>
+        <br>
+        <input type="text" id="roll">
+        <br>
+        <label for="course">Course Details:</label>
+        <br>
+        <input type="text" id="course">
+        <br>
+        <br>
+        <input id="submit" type="submit" value="submit" style="color: rgb(255, 0, 0);" >
+        
+    </fieldset></form>
+    <button class="bt2" onclick="dis()" style="color: red;">start</button>
+    </div>
     
-    <div class="qp">
+    <div class="qp" id="qp1" style="display: none;">
         <div class="container">
-        <div style="font-size:20pt;">Quiz</div>
+        
          <div class="ques" id="question"> 
          </div>
          <div><input type="checkbox" id="a" name="options">
